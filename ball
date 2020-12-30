@@ -1,0 +1,33 @@
+після import
+from random import choice,randint
+
+
+ball = turtle.Turtle()
+ball.shape('circle')
+ball.speed(0)
+ball.color('red')
+ball.dx = 3
+ball.dy = 3
+ball.penup()
+
+while True:
+window.update()
+ball.setx(ball.xcor() + ball.dx)
+ball.sety(ball.ycor() + ball.dy)
+
+if ball.ycor() >= 290:
+ ball.dy = -ball.dy
+ 
+if ball.ycor() >= -290:
+ ball.dy = -ball.dy
+ 
+if ball.xcor() >= 490:
+ ball.goto(0,randint(-50,50))
+ ball.dx = choice([-4,-3,-2,2,3,4])
+ ball.dy = choice([-4,-3,-2,2,3,4])
+ 
+if ball.xcor() <= -490:
+  ball.goto(0,randint(-50,50))
+  ball.dx = 3
+  ball.dy = 3
+ 
